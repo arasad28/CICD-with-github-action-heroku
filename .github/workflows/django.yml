@@ -15,7 +15,7 @@ jobs:
     - name: Setup Python Version ${{ matrix.python-version }}
       uses: actions/setup-python@v4.7.1
       with:
-      python-version: ${{matrix.python-verison}}
+        python-version: ${{matrix.python-verison}}
     - name: Install Dependency for django
       run:
         python -m pip install --upgrade pip
