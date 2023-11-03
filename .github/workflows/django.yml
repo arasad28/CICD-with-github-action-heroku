@@ -20,4 +20,15 @@ jobs:
       run:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-      
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy djanog app on heruku
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Deploy
+        uses: akhileshns/heroku-deploy@v3.12.14 # This is the action
+          with:
+            heroku_api_key: ${{secrets.HERUKU_SECRET_KEY}}
+            heroku_app_name: ${{secrets.HERUKU_SECRET_NAME}}
+            heroku_email: "asadfe24@gmail.com"
